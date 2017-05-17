@@ -1,0 +1,31 @@
+{
+  "name": "club-recommendation-system",
+  "version": "1.0.0",
+  "description": "Club Recommendation System - Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eliseoci/club-recommender.git"
+  },
+  "keywords": [
+    "fuzzy",
+    "logic",
+    "recommendation",
+    "system"
+  ],
+  "author": "Eliseo Cohen Imach",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "fuzzylogic": "^0.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
