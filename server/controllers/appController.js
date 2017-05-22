@@ -42,7 +42,7 @@ exports.fuzzify = function(req, res) {
 
         var pocaPlata = { name: 'poca', value: Fuzzy.triangle(user.presupuesto, 0, 100, 150) }
         var medioPlata = { name: 'media', value: Fuzzy.triangle(user.presupuesto, 120, 350, 500) }
-        var muchaPlata = { name: 'mucha', value: Fuzzy.triangle(user.presupuesto, 450, 600, 900, 3000) }
+        var muchaPlata = { name: 'mucha', value: Fuzzy.triangle(user.presupuesto, 450, 600, 2000, 3000) }
 
         var mañana = { name: 'mañana', value: Fuzzy.triangle(user.horario, 8, 10, 13) }
         var tarde = { name: 'tarde', value: Fuzzy.triangle(user.horario, 12, 17, 19) }
@@ -116,12 +116,12 @@ exports.fuzzify = function(req, res) {
 
             // IF R4
             if (maxEdad.name == 'joven' && maxAmbiente.name == 'tranquilo') {
-                if (maxPlata == 'poca') {
+                if (maxPlata.name == 'poca') {
                     res.json('Quedate en tu casa');
-                } else if (maxPlata == 'media') {
-                    if (maxHorario == 'mañana') {
+                } else if (maxPlata.name == 'media') {
+                    if (maxHorario.name == 'mañana') {
                         res.json('LOS PITUFOS 3 - SUNSTAR')
-                    } else if (maxHorario == 'tarde') {
+                    } else if (maxHorario.name == 'tarde') {
                         res.json('UN JEFE EN PAÑALES - CINE ATLAS')
                     } else {
                         res.json('RAPIDOS Y FURIOSOS 8 - CINE ATLAS')
@@ -166,6 +166,14 @@ exports.fuzzify = function(req, res) {
                         res.json('El rancho criollo / El 10 / San telmo')
                     } else if (user.comida == 'plato') {
                         res.json('II Postino / El quebracho / La querencia');
+                    } else if (user.generoMusical == 'electro') {
+                        res.json('ElectroPub');
+                    } else if (user.generoMusical == 'cumbia') {
+                        res.json('PaTuCumbia Pub');
+                    } else if (user.generoMusical == 'pop') {
+                        res.json('La San Juan / Black');
+                    } else if (user.generoMusical == 'rock') {
+                        res.json('La Rockola / Irlanda');
                     }
                 }
             }
@@ -328,17 +336,17 @@ exports.fuzzify = function(req, res) {
                 if (maxPlata.name == 'poca') {
                     res.json('quedate en tu casa, hacete pochoclos');
                 } else if (maxPlata.name == 'media') {
-                    if (maxHorario == 'mañana') {
+                    if (maxHorario.name == 'mañana') {
                         res.json('LOS PITUFOS 3 - SUNSTAR')
-                    } else if (maxHorario == 'tarde') {
+                    } else if (maxHorario.name == 'tarde') {
                         res.json('UN JEFE EN PAÑALES - CINE ATLAS')
                     } else {
                         res.json('RAPIDOS Y FURIOSOS 8 - CINE ATLAS')
                     }
                 } else {
-                    if (maxHorario == 'mañana') {
+                    if (maxHorario.name == 'mañana') {
                         res.json('Teatro San Martin')
-                    } else if (maxHorario == 'tarde') {
+                    } else if (maxHorario.name == 'tarde') {
                         res.json('Teatro Alberdi')
                     } else {
                         res.json('Teatro Mercedes Sosa')
@@ -391,4 +399,11 @@ exports.fuzzify = function(req, res) {
                     }
                 }
             }
+
+            res.json({
+                maxEdad: maxEdad.name,
+                maxPlata: maxPlata.name,
+                maxAmbiente: maxAmbiente.name,
+                maxHorario: maxHorario.name
+            })
         };
