@@ -91,6 +91,8 @@ exports.fuzzify = function(req, res) {
                         res.json('El Kun / El 10 / Chacho');
                     } else if (user.comida == 'plato') {
                         res.json('Il Postino / El quebracho / La querencia');
+                    } else {
+                        res.json('Tic tac toe')
                     }
                 }
             }
@@ -102,14 +104,8 @@ exports.fuzzify = function(req, res) {
                     res.json('quedate en tu casa, hacete pochoclos');
                 } else if (maxPlata.name == 'media' || maxPlata.name == 'mucha') {
                     var lugar = 'boliche';
-                    if (user.generoMusical == 'electro') {
-                        res.json('Lo siento, no hay para tu edad');
-                    } else if (user.generoMusical == 'cumbia') {
-                        res.json('Lo siento, no hay para tu edad');
-                    } else if (user.generoMusical == 'pop') {
+                    if (user.generoMusical){
                         res.json('Matine Huerto, Baile de colegios.');
-                    } else if (user.generoMusical == 'rock') {
-                        res.json('Lo siento no hay para tu edad');
                     }
                 }
             }
@@ -135,6 +131,8 @@ exports.fuzzify = function(req, res) {
                         res.json('El rancho criollo')
                     } else if (user.comida == 'plato') {
                         res.json('Il Postino')
+                    } else {
+                        res.json('Plaza Urquiza')
                     }
                 }
 
@@ -155,6 +153,8 @@ exports.fuzzify = function(req, res) {
                         res.json('La San Juan / Black');
                     } else if (user.generoMusical == 'rock') {
                         res.json('La Rockola / Irlanda');
+                    } else {
+                        res.json('La Barra - 25 y Corrientes')
                     }
                 } else if (maxPlata.name == 'mucha') {
                     var lugar = 'bar';
@@ -174,6 +174,8 @@ exports.fuzzify = function(req, res) {
                         res.json('La San Juan / Black');
                     } else if (user.generoMusical == 'rock') {
                         res.json('La Rockola / Irlanda');
+                    } else {
+                        res.json('Chacapiedras')
                     }
                 }
             }
@@ -191,6 +193,8 @@ exports.fuzzify = function(req, res) {
                         res.json('Recorcholis')
                     } else if (user.generoMusical == 'rock') {
                         res.json('La Boite')
+                    } else {
+                        res.json('Recorcholis')
                     }
                 } else {
                     if (user.generoMusical == 'electro') {
@@ -201,6 +205,8 @@ exports.fuzzify = function(req, res) {
                         res.json('Recorcholis')
                     } else if (user.generoMusical == 'rock') {
                         res.json('La Boite')
+                    } else {
+                        res.json('Recorcholis')
                     }
                 }
             }
@@ -220,6 +226,8 @@ exports.fuzzify = function(req, res) {
                         res.json('El Kun / El 10 / Chacho');
                     } else if (user.comida == 'plato') {
                         res.json('Il Postino / El quebracho / La querencia');
+                    } else {
+                        res.json('Cafe Martinez')
                     }
                 } else {
                     if (maxHorario == 'mañana') {
@@ -247,6 +255,8 @@ exports.fuzzify = function(req, res) {
                         res.json('El Kun / El 10 / Chacho');
                     } else if (user.comida == 'plato') {
                         res.json('Il Postino / El quebracho / La querencia');
+                    } else {
+                        res.json('Beckets')
                     }
                 } else {
                     if (user.generoMusical == 'electro') {
@@ -257,6 +267,8 @@ exports.fuzzify = function(req, res) {
                         res.json('La San Juan')
                     } else if (user.generoMusical == 'rock') {
                         res.json('Bar Irlanda')
+                    } else {
+                        res.json('Dublin')
                     }
                 }
             }
@@ -276,6 +288,8 @@ exports.fuzzify = function(req, res) {
                         res.json('Lancaster / Shampoo');
                     } else if (user.generoMusical == 'rock') {
                         res.json('La Boite');
+                    } else {
+                        res.json('Black')
                     }
                 }
             }
@@ -293,6 +307,8 @@ exports.fuzzify = function(req, res) {
                         res.json('El rancho criollo')
                     } else if (user.comida == 'plato') {
                         res.json('Il Postino')
+                    } else {
+                        res.json('Cafe Martinez')
                     }
                 } else {
                     if (maxHorario == 'mañana') {
@@ -328,13 +344,15 @@ exports.fuzzify = function(req, res) {
                         res.json('Lancaster / Shampoo');
                     } else if (user.generoMusical == 'rock') {
                         res.json('La Boite');
+                    } else {
+                        res.json('Black')
                     }
                 }
             }
             // IF R13
             if (maxEdad.name == 'viejo' && maxAmbiente.name == 'tranquilo') {
                 if (maxPlata.name == 'poca') {
-                    res.json('quedate en tu casa, hacete pochoclos');
+                    res.json('quedarte en tu casa, hacerte pochoclos');
                 } else if (maxPlata.name == 'media') {
                     if (maxHorario.name == 'mañana') {
                         res.json('LOS PITUFOS 3 - SUNSTAR')
@@ -357,7 +375,7 @@ exports.fuzzify = function(req, res) {
             if (maxEdad.name == 'viejo' && maxAmbiente.name == 'tranquiloMedio') {
                 var lugar = 'restaurante/bar';
                 if (maxPlata.name == 'poca') {
-                    res.json('quedase en su casa');
+                    res.json('quedarse en su casa');
                 } else if (maxPlata.name == 'media' || maxPlata.name == 'mucha') {
                     var lugar = 'bar';
                     if (user.comida == 'vegetariano') {
@@ -368,6 +386,8 @@ exports.fuzzify = function(req, res) {
                         res.json('El rancho criollo');
                     } else if (user.comida == 'plato') {
                         res.json('II Postino / El qubracho');
+                    } else {
+                        res.json('Hotel Hilton')
                     }
                 }
             }
@@ -386,6 +406,8 @@ exports.fuzzify = function(req, res) {
                         res.json('El rancho criollo')
                     } else if (user.comida == 'plato') {
                         res.json('Il Postino')
+                    } else {
+                        res.json('Hotel Hilton')
                     }
                 } else {
                     if (user.generoMusical == 'electro') {
@@ -396,6 +418,8 @@ exports.fuzzify = function(req, res) {
                         res.json('Casino del Parque');
                     } else if (user.generoMusical == 'rock') {
                         res.json('Casino Blue');
+                    } else {
+                        res.json('Sheraton')
                     }
                 }
             }
